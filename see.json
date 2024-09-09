@@ -1,0 +1,141 @@
+{
+    "getticket_detail": {
+        "email": "suttipongeiei9@gmail.com",
+        "mobile": "+66801615293",
+        "fullname": "สุทธิพงษ์ แช่มชื่น",
+        "firstname": "สุทธิพงษ์",
+        "lastname": "แช่มชื่น",
+        "acceptInformation": true,
+        "consent": true,
+        "isDataFor": "DEMO",
+        "isregisLanguage": "th",
+        "payAmount": 1,
+        "payPrice": "201.13",
+        "reference": {},
+        "registerData": [
+            {
+                "questionID": 1676617027573,
+                "question": "First name",
+                "description": "",
+                "questionType": "FIRST_NAME",
+                "answer": "สุทธิพงษ์",
+                "answerOther": []
+            },
+            {
+                "questionID": 1676617030421,
+                "question": "Last name",
+                "description": "",
+                "questionType": "LAST_NAME",
+                "answer": "แช่มชื่น",
+                "answerOther": []
+            },
+            {
+                "questionID": 1676617065037,
+                "question": "Email",
+                "description": "",
+                "questionType": "EMAIL",
+                "answer": "suttipongeiei9@gmail.com",
+                "answerOther": []
+            },
+            {
+                "questionID": 1693905308267,
+                "question": "Mobile number",
+                "description": "",
+                "questionType": "MOBILE",
+                "answer": {
+                    "code": "",
+                    "number": "0801615293"
+                },
+                "answerOther": []
+            }
+        ],
+        "registerItems": [],
+        "is_register_form": false,
+        "is_formrequiredfor": "one",
+        "promotionCode": {
+            "id": "",
+            "code": "",
+            "codeType": "",
+            "price": 0,
+            "percent": 0
+        },
+        "shippingMethod": {
+            "online": true,
+            "onsite": false,
+            "transport": false
+        }
+    },
+    "ticket": {
+        "paymentConfig": {
+            "service_charge_percent": {
+                "creditcard": 3.5,
+                "qr": 1,
+                "installment": 7,
+                "mobilebanking": 0
+            },
+            "slip_config": {
+                "image_payment": "",
+                "upload_slip_success": "<p><img src=\"https://eventpassinsight-bucket.s3.ap-southeast-1.amazonaws.com/dev/files/1689239612656-icon-siccess.png\" style=\"width: 30%;\" class=\"fr-fic fr-dib\" data-originalname=\"1689239612656-icon-siccess.png\" data-path=\"eventpassinsight-bucket/dev/files\" data-type=\"image/png\"></p><h4 style='box-sizing: border-box; line-height: 1.2; color: rgb(0, 0, 0); font-family: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 1.5rem !important; margin-bottom: 1.5rem !important; font-weight: 600 !important; font-size: 20px !important;'>อัปโหลดสลิปชำระเงินสำเร็จ</h4><p><br></p><div style='box-sizing: border-box; color: rgb(0, 0, 0); font-family: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>หากตรวจสอบข้อมูลเรียบร้อยแล้ว</div><div style='box-sizing: border-box; color: rgb(0, 0, 0); font-family: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>จะส่งผลยืนยันการลงทะเบียนไปที่ Email</div><div style='box-sizing: border-box; color: rgb(0, 0, 0); font-family: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>และ SMS ของคุณ</div><div style='box-sizing: border-box; color: rgb(0, 0, 0); font-family: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 1.5rem !important; text-align: center;'>ติดต่อสอบถามเพิ่มเติม call center<br>บริษัท....................</div><div style='box-sizing: border-box; color: rgb(0, 0, 0); font-family: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 1.5rem !important;'>โทร.........................</div><p><br></p>",
+                "banks": []
+            },
+            "is_service_charge_vat": true,
+            "is_pay_creditcard": true,
+            "is_pay_qr": true,
+            "is_pay_installment": false,
+            "is_pay_mobilebanking": false,
+            "is_service_charge": true,
+            "is_vat": false,
+            "is_pay_slip": false,
+            "service_charge_label": "Service Charge",
+            "expired_minute": 15
+        },
+        "conditionUsed": [
+            {
+                "_id": "66ddcb56e00018bd9a4d949f",
+                "conditionID": 24080106575959950,
+                "conditionName": "มาเดี่ยว",
+                "ticketPrice": 199,
+                "want_to_sell": 500,
+                "ticketamount": 2000,
+                "limit_for_account": 2000,
+                "startdate": "2024-08-06T00:00:00.000Z",
+                "enddate": "2024-09-14T23:59:59.000Z",
+                "ticket_use": 441,
+                "ticketbalance": 1559,
+                "access_startdate": null,
+                "access_enddate": null,
+                "access_limit": 0,
+                "conditionType": "main",
+                "parentID": null,
+                "getTicketAmount": 1,
+                "form_type": "none",
+                "where_to_sell": {
+                    "online": true,
+                    "onsite": true,
+                    "hybrid": true
+                },
+                "zoneID": "",
+                "channels": [],
+                "isPromotion": false,
+                "promotionAutoAssign": false,
+                "promotion": {},
+                "qty": 1,
+                "getAmount": 1
+            }
+        ],
+        "eventID": "66ab7237c966f7a531e76bb3",
+        "ticketBanner": "https://eventpassinsight-bucket.s3.ap-southeast-1.amazonaws.com/production/files/1722512232012-LEOpayment450x190px-01-NattananKamolhat.jpg",
+        "ticketCode": "LRFS",
+        "ticketDescription": "",
+        "ticketID": "66ab78acd21dc9bcc1451b81",
+        "ticketImage": "https://eventpassinsight-bucket.s3.ap-southeast-1.amazonaws.com/production/files/1722512242228-LEOfirstpagebanner%C3%A0%C2%B8%C2%AA%C3%A0%C2%B8%C2%B8%C3%A0%C2%B8%C2%A3%C3%A0%C2%B8%C2%B4%C3%A0%C2%B8%C2%99%C3%A0%C2%B8%C2%97%C3%A0%C2%B8%C2%A3%C3%A0%C2%B9%C2%8C650x850px-01-NattananKamolhat.jpg",
+        "ticketName": "LEO RAINY FEST : SURIN",
+        "ticketType": "LEO RAINY FEST : สุรินทร์",
+        "ticketTag": "leorainyfestsurin"
+    },
+    "account_detail": {
+        "customer_name": "สุทธิพงษ์ แช่มชื่น",
+        "customer_email": "suttipongeiei9@gmail.com"
+    },
+    "referenceno": "REF840331925632"
+}

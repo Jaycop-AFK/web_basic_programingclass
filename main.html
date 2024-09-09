@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESP32 WebSocket</title>
+  <script>
+    var ws;
+
+    // Function to initialize WebSocket connection
+    function initWebSocket() {
+      ws = new WebSocket('ws://172.20.10.2:81'); // Replace with your ESP32 IP address
+
+      // When WebSocket connection is established
+      ws.onopen = function(event) {
+        console.log('WebSocket connection established');
+      };
+
+      // When a message is received from the server
+      ws.onmessage = function(event) {
+        console.log('Received message from server: ' + event.data);
+      };
+
+      // When WebSocket connection is closed
+      ws.onclose = function(event) {
+        console.log('WebSocket connection closed');
+      };
+    }
+
+    // Function to send custom text to the ESP32 when the button is clicked
+    function sendText() {
+  if (ws.readyState === WebSocket.OPEN) {
+    var inputText = document.getElementById('inputText').value;
+    ws.send(inputText);
+    console.log('Sent "' + inputText + '" to the ESP32');
+  } else {
+    console.log('WebSocket is not open.');
+  }
+}
+
+
+    window.onload = function() {
+      initWebSocket();
+    };
+  </script>
+</head>
+<body>
+  <h1>ESP32 WebSocket Example</h1>
+
+  <!-- Text input field -->
+  <input type="text" id="inputText" placeholder="Enter your message" />
+  
+  <!-- Button to send the text -->
+  <button onclick="sendText()">Send Text</button>
+</body>
+</html>
