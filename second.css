@@ -178,6 +178,19 @@ body {
     border-radius: 20px;
 }
 
+@media(min-width:84em){
+    .section-hero{
+        background-color: #0037af;
+    }
+    .hero{
+        max-width: 120rem;
+    }
+    .heading-primary{
+        font-size: 4.4rem;
+    }
+
+}
+
 @media(max-width:75em){
    html{
     font-size: 50%;
