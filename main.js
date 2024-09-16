@@ -39,3 +39,10 @@ const obs = new IntersectionObserver(
 )
 
 obs.observe(sectionHero);
+
+const btnNav = document.querySelector(".btn-mobile-nav");
+const headerel = document.querySelector(".header");
+btnNav.addEventListener("click",function () {
+        headerel.classList.toggle('nav-open')
+});
+

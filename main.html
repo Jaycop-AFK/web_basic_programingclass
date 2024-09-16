@@ -1,54 +1,175 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>ESP32 WebSocket</title>
-  <script>
-    var ws;
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESP32 WebSocket Binary Motor Control</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+      }
 
-    // Function to initialize WebSocket connection
-    function initWebSocket() {
-      ws = new WebSocket('ws://172.20.10.2:81'); // Replace with your ESP32 IP address
+      h1 {
+        color: #333;
+      }
 
-      // When WebSocket connection is established
-      ws.onopen = function(event) {
-        console.log('WebSocket connection established');
+      .button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 12px;
+        box-shadow: 0 5px #666;
+        transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      }
+
+      .button:active {
+        background-color: #45a049;
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+      }
+
+      .button:focus {
+        outline: none;
+      }
+
+      .button:hover {
+        background-color: #3e8e41;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      var ws;
+
+      function initWebSocket() {
+        ws = new WebSocket("ws://172.20.10.2:8080");
+
+        ws.onopen = function (event) {
+          console.log("WebSocket connection established");
+        };
+
+        ws.onmessage = function (event) {
+          if (typeof event.data === "object") {
+            const reader = new FileReader();
+            reader.onload = function () {
+              const arrayBuffer = reader.result;
+              const uint8Array = new Uint8Array(arrayBuffer);
+              console.log("Received binary message from server:", uint8Array);
+            };
+            reader.readAsArrayBuffer(event.data);
+          } else {
+            console.log("Received text message from server: " + event.data);
+          }
+        };
+
+        ws.onclose = function (event) {
+          console.log("WebSocket connection closed");
+        };
+      }
+
+      function sendCommand(command) {
+        if (ws.readyState === WebSocket.OPEN) {
+          const binaryData = new Uint8Array([command]);
+          ws.send(binaryData);
+          console.log("Sent command to ESP32: " + command);
+        } else {
+          console.log("WebSocket is not open.");
+        }
+      }
+
+      function moveForward() {
+        sendCommand(0x01);
+      }
+
+      function moveBackward() {
+        sendCommand(0x02);
+      }
+
+      function moveTurnLeft() {
+        sendCommand(0x03);
+      }
+
+      function moveTurnRight() {
+        sendCommand(0x04);
+      }
+
+      function sendMotorStop() {
+        sendCommand(0x00);
+      }
+
+      // เพิ่มความเร็ว
+      function increaseSpeed() {
+        sendCommand(0x05);
+      }
+
+      // ลดความเร็ว
+      function decreaseSpeed() {
+        sendCommand(0x06);
+      }
+
+      // ฟังก์ชันสำหรับการกดแป้นพิมพ์
+      function handleKeyDown(event) {
+        switch (event.key) {
+          case 'w':
+            moveForward();
+            break;
+          case 'a':
+            moveTurnLeft();
+            break;
+          case 's':
+            moveBackward();
+            break;
+          case 'd':
+            moveTurnRight();
+            break;
+        }
+      }
+
+      // ฟังก์ชันสำหรับการปล่อยแป้นพิมพ์
+      function handleKeyUp(event) {
+        switch (event.key) {
+          case 'w':
+          case 'a':
+          case 's':
+          case 'd':
+            sendMotorStop();
+            break;
+        }
+      }
+
+      window.onload = function () {
+        initWebSocket();
+
+        // ดักจับเหตุการณ์กดและปล่อยแป้นพิมพ์
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('keyup', handleKeyUp);
       };
+    </script>
+  </head>
+  <body>
+    <h1>ESP32 WebSocket Binary Motor Control</h1>
 
-      // When a message is received from the server
-      ws.onmessage = function(event) {
-        console.log('Received message from server: ' + event.data);
-      };
+    <button class="button" onclick="increaseSpeed()">เพิ่มความเร็ว</button>
+    <button class="button" onclick="decreaseSpeed()">ลดความเร็ว</button>
 
-      // When WebSocket connection is closed
-      ws.onclose = function(event) {
-        console.log('WebSocket connection closed');
-      };
-    }
+    <br/>
 
-    // Function to send custom text to the ESP32 when the button is clicked
-    function sendText() {
-  if (ws.readyState === WebSocket.OPEN) {
-    var inputText = document.getElementById('inputText').value;
-    ws.send(inputText);
-    console.log('Sent "' + inputText + '" to the ESP32');
-  } else {
-    console.log('WebSocket is not open.');
-  }
-}
+    <button class="button" onmousedown="moveForward()" onmouseup="sendMotorStop()">เดินหน้า</button>
+    <button class="button" onmousedown="moveBackward()" onmouseup="sendMotorStop()">ถอยหลัง</button>
+    <button class="button" onmousedown="moveTurnLeft()" onmouseup="sendMotorStop()">เลี้ยวซ้าย</button>
+    <button class="button" onmousedown="moveTurnRight()" onmouseup="sendMotorStop()">เลี้ยวขวา</button>
 
-
-    window.onload = function() {
-      initWebSocket();
-    };
-  </script>
-</head>
-<body>
-  <h1>ESP32 WebSocket Example</h1>
-
-  <!-- Text input field -->
-  <input type="text" id="inputText" placeholder="Enter your message" />
-  
-  <!-- Button to send the text -->
-  <button onclick="sendText()">Send Text</button>
-</body>
+    <p>ใช้ปุ่ม W, A, S, D บนแป้นพิมพ์เพื่อควบคุมการเคลื่อนที่</p>
+  </body>
 </html>
